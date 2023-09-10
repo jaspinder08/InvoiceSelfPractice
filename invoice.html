@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="invoice.css">
+    <script src="invoice.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Invoice Table</h1>
+<table class="table">
+    <thead class="table-dark">
+  <tr>
+    <th scope="col" class="text-end">#</th>
+    <th scope="col" class="text-end">Description</th>
+    <th scope="col" class="text-end">Rate</th>
+    <th scope="col" class="text-end">Quantity</th>
+    <th scope="col" class="text-end">Amount</th>
+    <th scope="col" class="text-end" >Gst</th>
+    <th scope="col" class="text-end" >After Gst Reduction</th>
+    <th scope="col" class="text-end" >Total Amount</th>
+    <th scope="col" class="notprint"><button class="addrow" onclick="btnAdd()">Add Row</button></th>
+  </tr>
+    </thead>  
+<tbody id="tbody">
+    <tr id="trow" class="d-none">
+        <td scope="row" name="sno" >1</td>
+        <td><input type="text" class="form-control text-end"></td>
+        <td><input type="number" class="form-control text-end" name="rate" onchange="calculations(this);"></td>
+        <td><input type="number" class="form-control text-end" name="qua" onchange="calculations(this);"></td>
+        <td><input type="number" class="form-control text-end" name="amt"></td>
+        <td><input type="number" class="form-control text-end" name="gst" onchange="calculations(this);" ></td>
+        <td><input type="number" class="form-control text-end" name="afterReduction" onchange="calculations(this);" ></td>
+        <td><input type="number" class="form-control text-end" name="totalAmount" onchange="calculations(this)"></td>
+        <td class="notprint"><button type="button" class="btn btn-danger" onclick="btndelete(this)">X</button>
+        </td>
+      </tr> 
+</tbody>
+</table>
+<div class="row">
+    <div class="col-8"> <button type="button" class="btn btn-primary" onclick="getprint()">Submit</button>
+    </div>
+    <div class="col-4">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="footerTotal">Grand Total</span>
+            <input type="text" class="form-control" placeholder="Total" >
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
